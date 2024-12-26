@@ -3,12 +3,12 @@ from django.db import models
 # Create your models here.
 class Lead(models.Model):
     LEAD_TYPE = [
-        ('BE', 'BinaknerExpress'),
-        ('BB', 'BinaknerBistro'),
-        ('BR', 'BinaknerRestaurant'),
-        ('BC', 'BinaknerCafe'),
-        ('BP', 'BinaknerPizzeria'),
-        ('BB', 'BikanerWala'),
+        ('BE', 'BikanerExpress'),
+        ('BB', 'BikanerBistro'),
+        ('BR', 'BikanerRestaurant'),
+        ('BC', 'BikanerCafe'),
+        ('BP', 'BikanerPizzeria'),
+        ('BB', 'BikanerWale'),
     ]
     LEAD_STATUS = [
         ('OO', 'Open'),
