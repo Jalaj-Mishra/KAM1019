@@ -1,0 +1,24 @@
+{% extends "layout.html" %} 
+
+{% block title %}
+Platform for KAM1019 
+{% endblock %} 
+
+{% block content %}
+<h2 class="text center mt-4">Add New Lead</h2>
+<a class="btn btn-primary" href="{% url 'add_lead' %}">Add New Lead</a>
+<div class="container row gap-3">
+    {% for lead in leads %}
+        <div class="card" style="width: 18rem; margin-top: 20px;">
+            <div class="card-body">
+                <h5 class="card-title">{{lead.name}}</h5>
+                <p class="card-text">{{lead.LeadStatus}}</p>
+                <a href="{% url 'edit_lead' lead.email %}" class="btn btn-primary">Edit</a>
+                <a href="{% url 'del_lead' lead.email %}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    {% endfor %}
+        
+</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "layout.html" %} 
+
+{% block title %}
+Platform for KAM1019 
+{% endblock %} 
+
+{% block content %}
+<h2 class="text center mt-4">Are you sure to delete this Lead ?? </h2>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Yes, delete it</button>
+    <a class='btn btn-success'
+    href="{% url 'lead_list' %}">Cancel</a>
+</form>
+{% endblock %}

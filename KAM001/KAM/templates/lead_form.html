@@ -1,0 +1,23 @@
+{% extends "layout.html" %} 
+
+{% block title %}
+Platform for KAM1019 
+{% endblock %} 
+
+{% block content %}
+<h2 class="text center mt-4">Hello</h2>
+
+<h3>
+    {% if form.instance.pk %}
+    Edit Lead
+    {% else %}
+    Add New Lead
+    {% endif %}
+</h3>
+<form method="post" class='form'>
+    {% csrf_token %}
+    {{form}}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<a href="{% url 'lead_list' %}">Back to lead_list</a>
+{% endblock %}
