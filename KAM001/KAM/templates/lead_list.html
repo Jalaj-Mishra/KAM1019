@@ -13,8 +13,10 @@ Platform for KAM1019
             <div class="card-body">
                 <h5 class="card-title">{{lead.name}}</h5>
                 <p class="card-text">{{lead.LeadStatus}}</p>
+                {% if lead.email == user.email %}
                 <a href="{% url 'edit_lead' lead.email %}" class="btn btn-primary">Edit</a>
                 <a href="{% url 'del_lead' lead.email %}" class="btn btn-danger">Delete</a>
+                {% endif %}
             </div>
         </div>
     {% endfor %}

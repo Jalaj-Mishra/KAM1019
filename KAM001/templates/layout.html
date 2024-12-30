@@ -67,10 +67,19 @@
               placeholder="Search"
               aria-label="Search"
             />
-            <button class="btn btn-outline-success" type="submit">
+            <button class="btn btn-outline-success mx-2" type="submit">
               Search
             </button>
           </form>
+          {% if user.is_authenticated %}
+          <form action="{% url 'logout' %}" method="post">
+              {% csrf_token %}
+              <button class="btn btn-danger" type="submit">Logout</button>
+          </form>
+          {% else %}
+          <a href="{% url 'register'%}" class="btn btn-primary mx-2">Register</a>
+          <a href="{% url 'login'%}" class="btn btn-success mx-2">Login</a>
+          {% endif %}
         </div>
       </div>
     </nav>
