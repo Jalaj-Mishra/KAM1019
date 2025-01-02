@@ -20,7 +20,7 @@ class Lead(models.Model):
     email = models.EmailField(max_length=40, primary_key=True)
     Mobile = models.CharField(max_length=13)
     LeadType = models.CharField(max_length=2, choices=LEAD_TYPE)
-    LeadStatus = models.CharField(max_length=2, choices=LEAD_STATUS)
+    LeadStatus = models.CharField(max_length=2, choices=LEAD_STATUS, default="OO")
 
 
 
